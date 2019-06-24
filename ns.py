@@ -3,7 +3,6 @@
 
 import re
 import pymorphy2
-from stop_phrases import stop_phrases
 from collections import Counter
 
 
