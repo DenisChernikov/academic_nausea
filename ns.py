@@ -13,15 +13,10 @@ def nausea(article):
     article = article.lower()
 
     def words_list(text):
-        return tuple(re.findall(r'([а-яё\'-]+)', text))
+        return re.findall(r'([а-яё\'-]+)', text)
 
     words = words_list(article)
     total_words = len(words)
-
-    for i in stop_phrases:
-        article = article.replace(i, '')
-
-    words = words_list(article)
     counter = Counter(words)
 
     morph = pymorphy2.MorphAnalyzer()
